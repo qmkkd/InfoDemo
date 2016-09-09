@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+
+<struts>
+
+	<package name="user" namespace="/" extends="struts-default">
+	
+		<action name="login" class="com.ouc.controllers.UserController"
+			method="login">
+			<result name="login_success">/view/info/showInfo.jsp</result>
+			<result name="login_failure">/view/user/login_failure.jsp</result>
+		</action>
+		
+		<action name="register" class="com.ouc.controllers.UserController" 
+			method="register">
+			<result>/view/user/register_success.jsp</result>
+		</action>
+		
+		<action name="enroll" class="com.ouc.controllers.InfoAction" method="enroll">
+			<result>/view/info/showInfo.jsp</result>
+		</action>
+		
+		<action name="delete" class="com.ouc.controllers.InfoAction" method="delete">
+			<result>/view/info/showInfo.jsp</result>
+		</action>
+		
+		<action name="update" class="com.ouc.controllers.InfoAction" method="update">
+			<result>/view/info/showInfo.jsp</result>
+		</action>
+		
+	</package>	
+	
+	
+</struts>  

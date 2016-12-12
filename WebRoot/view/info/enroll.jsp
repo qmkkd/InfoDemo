@@ -14,7 +14,7 @@
 	<hr align="center" width="50%"><br>
 	
 	<div align="center">
-	<form action="enroll.action" method="post">
+	<form action="info_enroll.action" method="post">
 		<span>姓名：</span><input type="text" name="info.name" /><br><br>
 		<span>性别：</span>
 		<input type="radio" name="info.gender" value="男" checked/>男

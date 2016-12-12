@@ -3,36 +3,32 @@
 <!DOCTYPE struts PUBLIC
 	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
-
-
 <struts>
 
 	<package name="user" namespace="/" extends="struts-default">
+		<!-- 通配符方式配置，user_login/register的action -->
+		<action name="user_*" class="com.ouc.controllers.UserAction"
+			method="{1}">
+			<result name="login_success">/view/user/{1}_success.jsp</result>
+			<result name="login_failure">/view/user/{1}_failure.jsp</result>
+			<result name="register_success">/view/user/{1}_success.jsp</result>
+			<result name="register_failure">/view/user/{1}_failure.jsp</result>
+			<allowed-methods>login,register</allowed-methods>
+		</action>
+		
+		<!-- 通配符方式，有info_enroll/update/delete的action -->
+		<action name="info_*" class="com.ouc.controllers.InfoAction" method="{1}">
+			<result>/view/info/showInfo.jsp</result>
+			<result name="enroll_failure">/view/info/showInfo.jsp</result>
+			<result name="update_failure">/view/info/showInfo.jsp</result>
+			<result name="delete_failure">/view/info/showInfo.jsp</result>
+			<allowed-methods>enroll,update,delete</allowed-methods>
+		</action>
+		
+		<action name="infos" class="com.ouc.controllers.InfoAction" method="getInfos">
+            <result>/view/info/showInfo.jsp</result>
+        </action>
 	
-		<action name="login" class="com.ouc.controllers.UserController"
-			method="login">
-			<result name="login_success">/view/info/showInfo.jsp</result>
-			<result name="login_failure">/view/user/login_failure.jsp</result>
-		</action>
-		
-		<action name="register" class="com.ouc.controllers.UserController" 
-			method="register">
-			<result>/view/user/register_success.jsp</result>
-		</action>
-		
-		<action name="enroll" class="com.ouc.controllers.InfoAction" method="enroll">
-			<result>/view/info/showInfo.jsp</result>
-		</action>
-		
-		<action name="delete" class="com.ouc.controllers.InfoAction" method="delete">
-			<result>/view/info/showInfo.jsp</result>
-		</action>
-		
-		<action name="update" class="com.ouc.controllers.InfoAction" method="update">
-			<result>/view/info/showInfo.jsp</result>
-		</action>
-		
 	</package>	
-	
-	
+
 </struts>  

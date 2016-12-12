@@ -52,7 +52,7 @@ input {
 				for (Info info : list) {
 		%>
 		<tr>
-			<form action="update.action" method="post">
+			<form action="info_update.action" method="post">
 				<td><input name="info.name" value="<%=info.getName()%>"
 					style="width: 80px"></td>
 				<td><input name="info.gender" value="<%=info.getGender()%>"
@@ -76,7 +76,7 @@ input {
 			
 			</form>
 			<td>
-				<form action="delete.action" method="post">
+				<form action="info_delete.action" method="post">
 					<input type="hidden" name="delId" value="<%=info.getId()%>" /> <input
 						type="submit" value="删除" onclick="delcfm();" />
 				</form>

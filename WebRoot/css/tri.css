@@ -1,0 +1,49 @@
+@CHARSET "UTF-8";
+.mainbox{
+position: relative;
+margin-left:40%;
+}
+.uptri{
+width:0px;
+height:0px;
+border-top:100px solid transparent;
+border-left:100px solid transparent;
+border-bottom:100px solid blue;
+border-right:100px solid transparent;
+padding:0;
+z-index:1;
+position: absolute;
+}
+.downtri{
+width:0px;
+height:0px;
+border-top:100px solid pink;
+border-left:100px solid transparent;
+border-bottom:100px solid transparent;
+border-right:100px solid transparent;
+padding:0;
+z-index:2;
+position: absolute;
+}
+.lefttri{
+width:0px;
+height:0px;
+border-top:100px solid transparent;
+border-left:100px solid transparent;
+border-bottom:100px solid transparent;
+border-right:100px solid green;
+padding:0;
+z-index:3;
+position:absolute;
+}
+.righttri{
+width:0px;
+height:0px;
+border-top:100px solid transparent;
+border-left:100px solid black;
+border-bottom:100px solid transparent;
+border-right:100px solid transparent;
+padding:0;
+z-index:3;
+position: absolute;
+}
